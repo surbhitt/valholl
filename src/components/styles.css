@@ -45,6 +45,25 @@ table {
 }
 /********************************************************/
 
+@font-face {
+    font-family: 'BerkshireSwash-Regular';
+    src: url('assets/fonts/BerkshireSwash-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Mali-Regular';
+    src: url('assets/fonts/Mali-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Skranji-Regular';
+    src: url('assets/fonts/Skranji-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Amita-Regular';
+    src: url('assets/fonts/Amita-Regular.ttf') format('truetype');
+}
 
 .bkg-img-head {
     background-image: url('assets/smooth-gray-background.jpg');
@@ -53,12 +72,48 @@ table {
 }
 
 .bkg-img-nav {
+  position: relative;
+}
+
+.bkg-img-nav::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('assets/backdrop.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: -1;
+}
+
+.card-container {
+  position: relative;
+  z-index: 1;
+  height: 430px;
+}
+/*
+.bkg-img-nav {
     background-image: url('assets/backdrop.jpeg');
     background-size: cover;
+    position: relative;
     height: 430px;
 }
 
-/*
+.bkg-img-nav::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-inde: -1;
+  pointer-events: none;
+  background-color: rgba(0,0,0,0.7);
+}
+
 .bkg-img-nav::before {
     content: '';
     top: 0;
@@ -73,14 +128,24 @@ table {
     );
 }*/
 
-.card-container {
-    height: 430px;
+.name {
+    font-family: 'Skranji-Regular', sans-serif;
 }
 
+.contact {
+    font-family: 'Mali-Regular', sans-serif;
+}
+
+/*.card-container {
+    height: 430px;
+}*/
+
 .card {
-    background-color: rgba(92, 112, 145, 0.5) 
+    background-color: rgba(50, 69, 89, 0.7); 
+    border-color: rgba(17, 22, 28, 1.0);
+    font-family: 'Skranji-Regular', sans-serif;
 } 
 .card:hover {
-    background-color: rgba(92, 112, 145, 0.7)
+    background-color: rgba(92, 112, 145, 0.7);
 }
 
