@@ -1,11 +1,12 @@
 import React from "react";
+import Navbar from './navbar'
 import "./styles.css"
 
 export default function Header () {
     return (
         <div>
-            <div className="bkg-img-head flex w-full items-center">
-                <div className="flex xs:flex-col md:flex-row mx-auto items-center">
+            <div className="bkg-img-head flex flex-col w-full">
+                <div className="flex xs:flex-col md:flex-row mx-auto items-center mt-16 md:mt-28 lg:mt-20">
                     <div className="flex flex-col">
                         <h1 
                             className="name xs:text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-white font-semibold"
@@ -39,7 +40,8 @@ export default function Header () {
                     </div>
                     <img src="assets/raven.png" alt="raven" className="raven"/>
                 </div>
-            </div>
+                <Navbar />
+			</div>
         </div>
     ) 
 }

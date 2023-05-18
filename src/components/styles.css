@@ -68,7 +68,7 @@ table {
 .bkg-img-head {
     background-image: url('assets/smooth-gray-background.jpg');
     background-size: cover;
-    height: 60vh;
+    height: 100vh;
 }
 
 @media (min-width: 340px) {
@@ -81,12 +81,16 @@ table {
     .raven {
         height: 400px;
     }
+    .card {
+        width: 160px;
+    }
 }
 
 @media (min-width: 1280px) {
     .raven {
         height: 500px;
     }
+    
 }
 
 .bkg-img-nav {
@@ -98,9 +102,9 @@ table {
 .card-container {
     position: relative;
     z-index: 1;
-    height: 430px;
+    height: 100px;
+    width: 80vw;
 }
-
 /*
 .bkg-img-nav {
     background-image: url('assets/backdrop.jpeg');
@@ -143,16 +147,16 @@ table {
     font-family: 'Mali-Regular', sans-serif;
 }
 
-/*.card-container {
+/*.card-container 
     height: 430px;
 }*/
 
 .card {
-    background-color: rgba(50, 69, 89, 0.7); 
-    border-color: rgba(17, 22, 28, 1.0);
     font-family: 'Skranji-Regular', sans-serif;
+    /*border-color: rgba(255, 8, 62, 1);*/
+    width: 200px;
 } 
 .card:hover {
-    background-color: rgba(92, 112, 145, 0.7);
+    background-color: rgba(255, 8, 62, 0.3);
 }
 
