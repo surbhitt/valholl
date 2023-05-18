@@ -45,25 +45,17 @@ table {
 }
 /********************************************************/
 
-@font-face {
-    font-family: 'BerkshireSwash-Regular';
-    src: url('assets/fonts/BerkshireSwash-Regular.ttf') format('truetype');
-}
 
 @font-face {
     font-family: 'Mali-Regular';
-    src: url('assets/fonts/Mali-Regular.ttf') format('truetype');
+    src: url('/Mali-Regular.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'Skranji-Regular';
-    src: url('assets/fonts/Skranji-Regular.ttf') format('truetype');
+    src: url('/Skranji-Regular.ttf') format('truetype');
 }
 
-@font-face {
-    font-family: 'Amita-Regular';
-    src: url('assets/fonts/Amita-Regular.ttf') format('truetype');
-}
 
 .bkg-img-head {
     background-image: url('/smooth-gray-background.jpg');
