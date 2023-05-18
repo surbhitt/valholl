@@ -22,23 +22,23 @@ export default function Header () {
                                 className="mr-10"
                                 href="https://github.com/surbhitt/"
                             >
-                                <img src="assets/github.png" className="xs:h-7 md:h-10 h-12" alt="Github" />
+                                <img src="/github.png" className="xs:h-7 md:h-10 h-12" alt="Github" />
                             </a>
                             <a 
                                 className="mr-10"
                                 href="https://linkedin.com/in/surbhitthakur/"
                             >
-                                <img src="assets/linkedin.png" className="xs:h-7 md:h-10 h-12" alt="Linkedin" />
+                                <img src="/linkedin.png" className="xs:h-7 md:h-10 h-12" alt="Linkedin" />
                             </a>
                             <a 
                                 className=""
                                 href="https://leetcode.com/savas_karanli/"
                             >
-                                <img src="assets/code.png" className="xs:h-7 md:h-10 h-12" alt="Leetcode" />
+                                <img src="/code.png" className="xs:h-7 md:h-10 h-12" alt="Leetcode" />
                             </a>
                         </div>
                     </div>
-                    <img src="assets/raven.png" alt="raven" className="raven"/>
+                    <img src="/raven.png" alt="raven" className="raven"/>
                 </div>
                 <Navbar />
 			</div>
