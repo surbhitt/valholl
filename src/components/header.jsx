@@ -15,7 +15,7 @@ export default function Header () {
                         </h1>
                         <div className="contact flex mt">
                             <p className="xs:text-sm sm:text-md md:text-lg lg:text-xl xl:text-2xl text-md text-white mr-1">surbhit.thakur@gmail.com, </p>
-                            <p className="xs:text-sm sm:text-md md:text-lg lg:text-xl xl:text-2xl text-md text-white">9868123940</p>
+                            <p className="xs:text-sm sm:text-md md:text-lg lg:text-xl xl:text-2xl text-md text-white">9650171042</p>
                         </div>
                         <div className="socials flex mt-3 items-center">
                             <a 
