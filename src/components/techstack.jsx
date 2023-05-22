@@ -1,9 +1,12 @@
 import React from "react";
 import "./styles.css"; 
+import ChartComponent from "./pieChart";
 
 let languages = {"JavaScript":85455,"HTML":4426,"CSS":6846,"C++":108076,"Batchfile":1080,"Python":86071,"Shell":944,"Vim Script":97,"C":701960,"Rust":9098};
 
 /*
+        __________________________on demand fetching of data from api 
+
 const accessToken = "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";
 const baseUrl = "https://api.github.com";
 let reposEndpnt = "/users/surbhitt/repos";
@@ -47,30 +50,31 @@ console.log(languages);
 const gridItems = [];
 function populateGrid () {
 	for (let lang in languages) {
-		if (!(lang in gridItems) || (languages[lang] != gridItems[lang])) {
-			gridItems.push({
+		const existingItem = gridItems.find(item => item.title === lang);
+    	if (!existingItem || languages[lang] !== existingItem.loc) {			
+			gridItems.push({	
 				'title' : lang,
 				'loc' : languages[lang],
+				'id' : languages[lang],
 			});
 		}
 	}
 };
 
-console.log(gridItems);
 const TechStack = () => {
 	populateGrid();
-  
+	
 	return (
-	<div className="techst-section relative">
-	  	<img src="/signsbkgrem.png" className="nordic-signs h-4/5" />
-		<div className="grid-container border-solid border-2 border-white">
+	<div className="techst-section relative flex items-center justify-evenly">
+		<div className="grid-container md:h-3/5 md:w-5/6 lg:w-1/2">
     	  {gridItems.map((item) => (
-    	    <div className="grid-item w-56" key={item.id}>
+    	    <div className="grid-item w-56 text-white font-semibold" key={item.id}>
     	      <h3>{item.title}</h3>
 			  <div>Lines of Code: {item.loc}</div>
 			</div>
     	  ))}
     	</div>
+		<ChartComponent gridItems={gridItems} className="hidden" />
 	</div>
   );
 };

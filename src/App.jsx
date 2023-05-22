@@ -50,7 +50,7 @@ function App() {
         contactButton ={contactButton} onContactButtonClick={handleContactButtonClick}
       />
       <section id="projects"><Projects /></section>
-      <section id="techst">TechStack</section>
+      <section id="techst"><TechStack /></section>
       <section id="contact"><ContactForm /></section>
     </div>
   )
