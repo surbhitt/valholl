@@ -60,8 +60,8 @@ export default function ContactForm() {
                 </div>
               </div>
               <div className="p-2 w-full">
-                <button className="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">
-                  Button
+                <button className="button flex mx-auto text-white border-0 py-2 px-8 rounded-full text-lg">
+                  Query
                 </button>
               </div>
             </div>

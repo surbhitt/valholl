@@ -1,61 +1,66 @@
 import React from "react";
 import "./styles.css"; 
-import axios from "axios";
+
+let languages = {"JavaScript":85455,"HTML":4426,"CSS":6846,"C++":108076,"Batchfile":1080,"Python":86071,"Shell":944,"Vim Script":97,"C":701960,"Rust":9098};
+
+/*
+const accessToken = "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";
+const baseUrl = "https://api.github.com";
+let reposEndpnt = "/users/surbhitt/repos";
 
 let repos = [];
-let languages = {}
-const baseUrl = 'https://api.github.com';
-// languagesEndpnt = '/repos/{owner}/{repo}/languages';
-let reposEndpnt = '/users/surbhitt/repos';
-async function fetchdata () {
-	try {
-		const response = await axios.get(baseUrl+reposEndpnt);
-		console.log(response['data']);
-	}
-	catch (error) {
-		console.error(error);
-	}
-	for (let repo of response['data']){
-		repos.push(repo['name']);
-	}
-	console.log(repos);
-}
 
-async function retrieveLanguages () {
-	for (let repo of repos) {
-		try {
-			const response = await axios.get(baseUrl+'/repos/surbhitt/'+repo+'/languages');
-		} catch (error) {
-			console.error(error);
-		}
-		if (response && !('message' in response)) {
-			for (let key in response){
-				if (response[key] in languages) languages[key] += response[key]; 
-				else languages[key] = response[key];
+function fetchData () {
+	fetch(baseUrl + reposEndpnt, {
+  headers: {
+	  Authorization: `Bearer ${accessToken}`,
+	},
+})
+.then((response) => response.json())
+.then((data) => {
+    for (let repo of data) repos.push(repo["name"]);
+    for (let repo of repos) {
+		fetch(baseUrl + "/repos/surbhitt/" + repo + "/languages", {
+			headers: {
+				Authorization: `Bearer ${accessToken}`,
+			},
+		})
+        .then((response) => response.json())
+        .then((data) => {
+			for (let lang in data) {
+				if (lang in languages) languages[lang] += data[lang];
+				else languages[lang] = data[lang];
 			}
-		} 
-	} 
-}
-
-function populateGrid (grid) {
-
-	fetchdata();
-	retrieveLanguages();
-
-}
-
-const TechStack = () => {
-  const gridItems = [];
-  
-  populateGrid(gridItems);
-  for (let lang of languages) {
-	gridItems.push({
-		'title' : lang,
-		'loc' : languages[lang],
+		});
+    }
+  })
+  .catch((error) => {
+	  console.error(error);
 	});
-  }
+}
 
-  return (
+fetchData();
+console.log("Lines of code for corresponding languages");	
+console.log(languages);
+*/
+
+const gridItems = [];
+function populateGrid () {
+	for (let lang in languages) {
+		if (!(lang in gridItems) || (languages[lang] != gridItems[lang])) {
+			gridItems.push({
+				'title' : lang,
+				'loc' : languages[lang],
+			});
+		}
+	}
+};
+
+console.log(gridItems);
+const TechStack = () => {
+	populateGrid();
+  
+	return (
 	<div className="techst-section relative">
 	  	<img src="/signsbkgrem.png" className="nordic-signs h-4/5" />
 		<div className="grid-container border-solid border-2 border-white">
