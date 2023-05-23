@@ -198,24 +198,8 @@ table {
 .grid-item {
   --tw-bg-opacity: 0.3;
   background-color: rgb(156 4 36 / var(--tw-bg-opacity));
-  padding: 20px;
   border: solid;
   border-width: 2px;
-}
-
-.grid-item img {
-  width: 100%;
-  height: auto;
-  border-radius: 4px;
-}
-
-.grid-item h3 {
-  margin: 10px 0;
-}
-
-.grid-item p {
-  font-size: 14px;
-  color: #666;
 }
 
 .techst-section {

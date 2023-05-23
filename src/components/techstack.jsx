@@ -65,16 +65,16 @@ const TechStack = () => {
 	populateGrid();
 	
 	return (
-	<div className="techst-section relative flex items-center justify-evenly">
-		<div className="grid-container md:h-3/5 md:w-5/6 lg:w-1/2">
+	<div className="techst-section relative flex items-center justify-evenly xs:flex-col lg:flex-row">
+		<div className="grid-container xs:h-1/5 md:h-3/5 md:w-5/6 lg:w-1/2">
     	  {gridItems.map((item) => (
-    	    <div className="grid-item w-56 text-white font-semibold" key={item.id}>
-    	      <h3>{item.title}</h3>
-			  <div>Lines of Code: {item.loc}</div>
+    	    <div className="grid-item flex flex-col justify-center xs:text-xs md:text-base xs:h-14 md:h-20 lg:h-32 md:w-52 text-white" key={item.id}>
+    	      <h3 className="font-extrabold ml-5">{item.title}</h3>
+			  <div className="ml-3">LinesOfCode: {item.loc}</div>
 			</div>
     	  ))}
     	</div>
-		<ChartComponent gridItems={gridItems} className="hidden" />
+		<ChartComponent gridItems={gridItems} />
 	</div>
   );
 };
