@@ -10,10 +10,10 @@ export default function Header(props) {
             <div className="bkg-img-head flex flex-col w-full">
                 <div className="flex xs:flex-col md:flex-row mx-auto items-center mt-16 md:mt-28 lg:mt-20 mb-16 md:mb-28 lg:mb-20">
                     <div className="intro flex flex-col h-2/3 justify-center ">
-                        <h1 className="name xs:text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-white font-semibold xs:mx-auto ml-auto">
+                        <h1 className="name xs:text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-white font-semibold xs:mx-auto">
                             <span>Surbhit Thakur</span>
                         </h1>
-                        <div className="contact flex mt xs:mx-auto ml-auto">
+                        <div className="contact flex mt xs:mx-auto">
                             <p className="xs:text-sm sm:text-md md:text-lg lg:text-xl xl:text-2xl text-md text-white mr-1">
                                 surbhit.thakur@gmail.com,{' '}
                             </p>
