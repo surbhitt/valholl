@@ -1,50 +1,129 @@
-
 /******************* css reset ************************/
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
 }
 body {
-	line-height: 1;
+    line-height: 1;
 }
-ol, ul {
-	list-style: none;
+ol,
+ul {
+    list-style: none;
 }
-blockquote, q {
-	quotes: none;
+blockquote,
+q {
+    quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
 }
 /********************************************************/
-
 
 @font-face {
     font-family: 'Mali-Regular';
@@ -76,13 +155,11 @@ table {
     .raven {
         height: 500px;
     }
-    
 }
 
 .bkg-img-head {
-    background-image:linear-gradient(0deg,
-              rgba(1, 1, 1, 1),
-              rgba(1, 1, 1, 0)), url('/smooth-gray-background.jpg');
+    background-image: linear-gradient(0deg, rgba(1, 1, 1, 1), rgba(1, 1, 1, 0)),
+        url('/smooth-gray-background.jpg');
     height: 100vh;
 }
 
@@ -97,46 +174,46 @@ table {
 }
 
 .name {
-  position: relative;
-  animation-name: popOut;
-  animation-duration: 1s;
-  animation-fill-mode: forwards;
+    position: relative;
+    animation-name: popOut;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
 }
 
 .contact {
-  position: relative;
-  animation-name: lowerDown;
-  animation-duration: 1s;
-  animation-fill-mode: forwards;
+    position: relative;
+    animation-name: lowerDown;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
 }
 
 .socials {
-  position: relative;
-  animation-name: lowerDown;
-  animation-duration: 1s;
-  animation-fill-mode: forwards;
+    position: relative;
+    animation-name: lowerDown;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
 }
 
 @keyframes popOut {
-  0% {
-    transform: translateY(100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0%);
-    opacity: 1;
-  }
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0%);
+        opacity: 1;
+    }
 }
 
 @keyframes lowerDown {
-  0% {
-    transform: translateY(-50%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(50%);
-    opacity: 1;
-  }
+    0% {
+        transform: translateY(-50%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(50%);
+        opacity: 1;
+    }
 }
 
 .card-container {
@@ -145,7 +222,6 @@ table {
     height: 100px;
     width: 80vw;
 }
-
 
 .name {
     font-family: 'Skranji-Regular', sans-serif;
@@ -159,7 +235,7 @@ table {
     font-family: 'Mali-Regular', sans-serif;
     /*border-color: rgba(255, 8, 62, 1);*/
     width: 200px;
-} 
+}
 .card:hover {
     background-color: rgba(255, 8, 62, 0.3);
 }
@@ -169,69 +245,76 @@ table {
 }
 
 .projects-section {
-  background-image: linear-gradient(180deg,
-              rgba(0, 0, 0, 1),
-              rgba(1, 1, 1, 0)), 
-              linear-gradient(0deg,
-              rgba(0, 0, 0, 1),
-              rgba(1, 1, 1, 0)),url('/backdrop.jpeg');
-  font-family: 'Mali-Regular';
+    background-image: linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 1),
+            rgba(1, 1, 1, 0)
+        ),
+        linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(1, 1, 1, 0)),
+        url('/backdrop.jpeg');
+    object-fit: cover;
+    font-family: 'Mali-Regular';
 }
 
 .project-card {
-  --tw-bg-opacity: 0.7;
-  background-color: rgb(24 24 27 / var(--tw-bg-opacity));
+    --tw-bg-opacity: 0.7;
+    background-color: rgb(24 24 27 / var(--tw-bg-opacity));
 }
 
 .project-card:hover {
 }
 
 .grid-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Adjust the number of columns as needed */
-  grid-gap: 10px;
-  height: 100%;
-  width: 100%;
-  place-items: center; 
+    display: grid;
+    grid-template-columns: repeat(
+        3,
+        1fr
+    ); /* Adjust the number of columns as needed */
+    grid-gap: 10px;
+    height: 100%;
+    width: 100%;
+    place-items: center;
 }
 
 .grid-item {
-  --tw-bg-opacity: 0.3;
-  background-color: rgb(156 4 36 / var(--tw-bg-opacity));
-  border: solid;
-  border-width: 2px;
+    --tw-bg-opacity: 0.3;
+    background-color: rgb(156 4 36 / var(--tw-bg-opacity));
+    border: solid;
+    border-width: 2px;
 }
 
 .techst-section {
-  height: 100vh;
-  background-image: linear-gradient(180deg,
-              rgba(0, 0, 0, 1),
-              rgba(1, 1, 1, 0)), 
-              linear-gradient(0deg,
-              rgba(0, 0, 0, 1),
-              rgba(1, 1, 1, 0)),url('/techstbkg.jpeg');
-  font-family: 'Mali-Regular';
+    height: 100vh;
+    background-image: linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 1),
+            rgba(1, 1, 1, 0)
+        ),
+        linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(1, 1, 1, 0)),
+        url('/techstbkg.jpeg');
+    font-family: 'Mali-Regular';
 }
 
 .nordic-signs {
-  position: absolute;
-  top: 0;
-  left: 0;
-  zIndex: -1;
-  opacity: 20%;
-} 
+    position: absolute;
+    top: 0;
+    left: 0;
+    zindex: -1;
+    opacity: 20%;
+}
 
 .contact-container {
-  height: 100vh;
-  background-image: linear-gradient(180deg,
-              rgba(0, 0, 0, 1),
-              rgba(1, 1, 1, 0)), 
-              linear-gradient(0deg,
-              rgba(0, 0, 0, 1),
-              rgba(1, 1, 1, 0)),url('/contactbkg.jpeg');
-  font-family: 'Mali-Regular';
+    height: 100vh;
+    background-image: linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 1),
+            rgba(1, 1, 1, 0)
+        ),
+        url('/contactbkg.jpeg');
+    background-size: cover;
+    font-family: 'Mali-Regular';
 }
 
 .button {
-  background-color: rgb(156, 4, 36);
+    background-color: rgb(156, 4, 36);
 }

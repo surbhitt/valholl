@@ -25,3 +25,4 @@ dist-ssr
 # support
 fetchLang.mjs
 languages.txt
+.prettierrc.json
