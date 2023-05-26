@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { animateScroll as scroll } from 'react-scroll'
 import './App.css'
-import Navbar from './components/titleNavbar'
+import Navbar from './components/stickyNav'
 import Header from './components/header'
 import Projects from './components/projects'
 import TechStack from './components/techstack'
