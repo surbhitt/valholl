@@ -275,11 +275,7 @@ table {
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(
-        3,
-        1fr
-    ); /* Adjust the number of columns as needed */
-    grid-gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
     height: 100%;
     width: 100%;
     place-items: center;
@@ -288,8 +284,6 @@ table {
 .grid-item {
     --tw-bg-opacity: 0.3;
     background-color: rgb(156 4 36 / var(--tw-bg-opacity));
-    border: solid;
-    border-width: 2px;
 }
 
 .techst-section {

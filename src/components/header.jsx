@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './styles.css'
-import { Link } from 'react-scroll'
+import { Link as ScrollLink } from 'react-scroll'
 
 export default function Header(props) {
-    const buttonInactive = 'button'
-    const buttonActive = 'border'
+    const [scrollToSection, setScrollToSection] = useState(false)
+
     return (
         <div>
             <div className="bkg-img-head flex flex-col w-full">
@@ -64,27 +64,46 @@ export default function Header(props) {
                 </div>
                 <nav className="flex flex-col border-2 border-purple-950 items-center">
                     <hr className="w-4/5" />
-                    <div className="flex justify-evenly items-center">
-                        <div className="card-container lg:px-64 flex justify-evenly items-center">
-                            <button
-                                className="button card flex font-semibold xs:h-8 xs:w-28 mr-3 xs:text-sm sm:h-10 md:h-12 md:w-48 w-64 h-20 text-white sm:text-lg lg:text-xl xl:text-2xl items-center justify-center"
-                                onClick={props.onProjButtonClick}
-                            >
+                    <div className="lg:px-72 flex justify-evenly items-center w-4/5 mt-10">
+                        <ScrollLink
+                            to="projects"
+                            smooth={true}
+                            duration={500}
+                            offset={-50}
+                            isDynamic={true}
+                            spy={scrollToSection}
+                            activeClass="active"
+                        >
+                            <button className="button card flex font-semibold xs:h-8 xs:w-20 xs:text-sm sm:h-10 md:h-12 md:w-48 w-64 h-20 text-white sm:text-lg lg:text-xl xl:text-2xl items-center justify-center rounded-full">
                                 Projects
                             </button>
-                            <button
-                                className="button card flex font-semibold xs:h-8 xs:w-28 mr-3 xs:text-sm sm:h-10 md:h-12 md:w-48 w-64 h-20 text-white sm:text-lg lg:text-xl xl:text-2xl items-center justify-center"
-                                onClick={props.onTechstButtonClick}
-                            >
+                        </ScrollLink>
+                        <ScrollLink
+                            to="techstack"
+                            smooth={true}
+                            duration={500}
+                            offset={-50}
+                            isDynamic={true}
+                            spy={scrollToSection}
+                            activeClass="active"
+                        >
+                            <button className="button card flex font-semibold xs:h-8 xs:w-24 xs:text-sm sm:h-10 md:h-12 md:w-48 w-64 h-20 text-white sm:text-lg lg:text-xl xl:text-2xl items-center justify-center rounded-full">
                                 Tech Stack
                             </button>
-                            <button
-                                className="button card flex font-semibold xs:h-8 xs:w-28 xs:text-sm sm:h-10 md:h-12 md:w-48 w-64 h-20 text-white sm:text-lg lg:text-xl xl:text-2xl items-center justify-center"
-                                onClick={props.onContactButtonClick}
-                            >
+                        </ScrollLink>
+                        <ScrollLink
+                            to="contact"
+                            smooth={true}
+                            duration={500}
+                            offset={-50}
+                            isDynamic={true}
+                            spy={scrollToSection}
+                            activeClass="active"
+                        >
+                            <button className="button card flex font-semibold xs:h-8 xs:w-20 xs:text-sm sm:h-10 md:h-12 md:w-48 w-64 h-20 text-white sm:text-lg lg:text-xl xl:text-2xl items-center justify-center rounded-full">
                                 Contact
                             </button>
-                        </div>
+                        </ScrollLink>
                     </div>
                 </nav>
             </div>

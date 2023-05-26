@@ -6,10 +6,10 @@ export default function projects() {
             <div className="overlay"></div>
             <div className="projects flex flex-col justify-center">
                 <div className="project-container flex xs:flex-col md:flex-row justify-center">
-                    <div className="project-card border-solid border border-white p-4 sm:m-1 md:m-3 m-5 h-72 w-80 text-white">
+                    <div className="project-card p-4 sm:m-1 md:m-3 m-5 h-72 w-80 text-white">
                         <img src="https://raw.githubusercontent.com/surbhitt/mini-projects/main/ImgView/assets/moon450x510test.png" />
                         <a
-                            href="#"
+                            href="https://github.com/surbhitt/mini-projects"
                             className="text-xl font-extrabold mt-4 underline"
                         >
                             Mini-Projects
@@ -19,10 +19,10 @@ export default function projects() {
                             various languages.
                         </div>
                     </div>
-                    <div className="project-card border-solid border border-white p-4 sm:m-1 md:m-3 m-5 h-72 w-80 text-white">
-                        <img src="#" />
+                    <div className="project-card p-4 sm:m-1 md:m-3 m-5 h-72 w-80 text-white">
+                        <img src="" />
                         <a
-                            href="#"
+                            href="https://github.com/surbhitt/console-game-engine"
                             className="text-xl font-extrabold mt-10 underline"
                         >
                             Console-Game-Engine
@@ -32,7 +32,7 @@ export default function projects() {
                             around the terminal to utilise it as a pixel buffer.
                         </div>
                     </div>
-                    <div className="project-card border-solid border border-white p-4 sm:m-1 md:m-3 m-5 h-72 w-80 text-white">
+                    <div className="project-card p-4 sm:m-1 md:m-3 m-5 h-72 w-80 text-white">
                         <img
                             src="https://raw.githubusercontent.com/surbhitt/cellular-automata/main/assets/gameoflife.gif"
                             className="h-40 w-60"
@@ -56,10 +56,12 @@ export default function projects() {
                     </div>
                 </div>
                 <div className="project-container flex xs:flex-col md:flex-row justify-center">
-                    <div className="project-card border-solid border border-white p-4 sm:m-1 md:m-3 m-5 h-72 w-80 text-white">
+                    <div className="project-card p-4 sm:m-1 md:m-3 m-5 h-72 w-80 text-white">
                         <img src="#" />
                         <a
-                            href="#"
+                            href={() => {
+                                window.open('https://google.com', '_blank')
+                            }}
                             className="text-xl font-extrabold mt-10 underline"
                         >
                             Algorithmic Botany
@@ -69,13 +71,13 @@ export default function projects() {
                             and the patterns found in nature.
                         </div>
                     </div>
-                    <div className="project-card border-solid border border-white p-4 sm:m-1 md:m-3 m-5 h-72 w-80 text-white">
+                    <div className="project-card p-4 sm:m-1 md:m-3 m-5 h-72 w-80 text-white">
                         <img
                             src="https://raw.githubusercontent.com/surbhitt/machine-learning/master/perceptron/assets/modelwt100.jpg"
                             className="h-36 w-56"
                         />
                         <a
-                            href=""
+                            href="https://github.com/surbhitt/machine-learning"
                             className="text-xl font-extrabold mt-10 underline"
                         >
                             Machine Learning
@@ -84,9 +86,12 @@ export default function projects() {
                             A very rudimentary neural network.
                         </div>
                     </div>
-                    <div className="project-card border-solid border border-white p-4 sm:m-1 md:m-3 m-5 h-72 w-80 text-white">
+                    <div className="project-card p-4 sm:m-1 md:m-3 m-5 h-72 w-80 text-white">
                         <img src="#" />
-                        <a className="text-xl font-extrabold mt-10 underline">
+                        <a
+                            href="https://github.com/surbhitt/tartarus"
+                            className="text-xl font-extrabold mt-10 underline"
+                        >
                             Tartarus
                         </a>
                         <div className="text-sm font-semibold mt-4">
