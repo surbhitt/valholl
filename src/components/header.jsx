@@ -65,21 +65,21 @@ export default function Header(props) {
                 <nav className="flex flex-col border-2 border-purple-950 items-center">
                     <hr className="w-4/5" />
                     <div className="flex justify-evenly items-center">
-                        <div className="card-container flex justify-evenly items-center">
+                        <div className="card-container lg:px-64 flex justify-evenly items-center">
                             <button
-                                className="button card flex font-semibold xs:h-8 xs:w-28 mr-3 xs:text-sm sm:h-10 md:h-12 md:w-48 w-64 h-20 text-white sm:text-lg lg:text-xl xl:text-2xl items-center justify-center rounded-2xl"
+                                className="button card flex font-semibold xs:h-8 xs:w-28 mr-3 xs:text-sm sm:h-10 md:h-12 md:w-48 w-64 h-20 text-white sm:text-lg lg:text-xl xl:text-2xl items-center justify-center"
                                 onClick={props.onProjButtonClick}
                             >
                                 Projects
                             </button>
                             <button
-                                className="button card flex font-semibold xs:h-8 xs:w-28 mr-3 xs:text-sm sm:h-10 md:h-12 md:w-48 w-64 h-20 text-white sm:text-lg lg:text-xl xl:text-2xl items-center justify-center rounded-2xl"
+                                className="button card flex font-semibold xs:h-8 xs:w-28 mr-3 xs:text-sm sm:h-10 md:h-12 md:w-48 w-64 h-20 text-white sm:text-lg lg:text-xl xl:text-2xl items-center justify-center"
                                 onClick={props.onTechstButtonClick}
                             >
                                 Tech Stack
                             </button>
                             <button
-                                className="button card flex font-semibold xs:h-8 xs:w-28 xs:text-sm sm:h-10 md:h-12 md:w-48 w-64 h-20 text-white sm:text-lg lg:text-xl xl:text-2xl items-center justify-center rounded-2xl"
+                                className="button card flex font-semibold xs:h-8 xs:w-28 xs:text-sm sm:h-10 md:h-12 md:w-48 w-64 h-20 text-white sm:text-lg lg:text-xl xl:text-2xl items-center justify-center"
                                 onClick={props.onContactButtonClick}
                             >
                                 Contact

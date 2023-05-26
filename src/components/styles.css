@@ -216,6 +216,14 @@ table {
     }
 }
 
+.titlenav {
+    width: 100vw;
+    height: 80px;
+    background-color: rgba(30, 30, 35, 0.7);
+    color: white;
+    font-family: 'Mali-Regular', sans-serif;
+}
+
 .card-container {
     position: relative;
     z-index: 1;
@@ -262,6 +270,7 @@ table {
 }
 
 .project-card:hover {
+    box-shadow: 0px 0px 10px 5px gray;
 }
 
 .grid-container {
