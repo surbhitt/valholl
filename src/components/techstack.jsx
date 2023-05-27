@@ -80,7 +80,7 @@ const TechStack = () => {
             <div className="grid-container xs:h-1/5 md:h-3/5 md:w-5/6 lg:w-1/2">
                 {gridItems.map((item) => (
                     <div
-                        className="grid-item flex flex-col justify-center xs:text-xs md:text-base xs:h-14 xs:w-28 md:h-20 lg:h-32 md:w-52 text-white"
+                        className="grid-item flex flex-col justify-center xs:text-xs md:text-base xs:h-14 xs:w-28 md:h-20 lg:h-32 md:w-52 text-white m-2"
                         key={item.id}
                     >
                         <h3 className="font-extrabold ml-5">{item.title}</h3>

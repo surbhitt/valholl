@@ -30,12 +30,16 @@ export default function projects() {
                         <div className="text-sm font-semibold mt-4">
                             A header only style library written as a wrapper
                             around the terminal to utilise it as a pixel buffer.
+                            It utilises the WinAPI to take control (a handle) of
+                            the terminal and manipulate the buffer to populate
+                            it with various kinds of values that act as a glyph
+                            and can be rendered as pixels on screen.
                         </div>
                     </div>
                     <div className="project-card p-4 sm:m-1 md:m-3 m-5 h-72 w-80 text-white">
                         <img
                             src="https://raw.githubusercontent.com/surbhitt/cellular-automata/main/assets/gameoflife.gif"
-                            className="h-40 w-60"
+                            className="h-40 mx-auto"
                         />
                         <a
                             href="https://github.com/surbhitt/cellular-automata"
@@ -57,28 +61,31 @@ export default function projects() {
                 </div>
                 <div className="project-container flex xs:flex-col md:flex-row justify-center">
                     <div className="project-card p-4 sm:m-1 md:m-3 m-5 h-72 w-80 text-white">
-                        <img src="#" />
+                        <img
+                            src="/proj_barnsleyfern.jpeg"
+                            className="h-44 mx-auto"
+                        />
                         <a
                             href={() => {
                                 window.open('https://google.com', '_blank')
                             }}
                             className="text-xl font-extrabold mt-10 underline"
                         >
-                            Algorithmic Botany
+                            Processing Based
                         </a>
                         <div className="text-sm font-semibold mt-4">
-                            Code that graphically models the botanical growth
-                            and the patterns found in nature.
+                            Part of Creative coding, graphics rendered using
+                            p5js.
                         </div>
                     </div>
                     <div className="project-card p-4 sm:m-1 md:m-3 m-5 h-72 w-80 text-white">
                         <img
                             src="https://raw.githubusercontent.com/surbhitt/machine-learning/master/perceptron/assets/modelwt100.jpg"
-                            className="h-36 w-56"
+                            className="h-44 mx-auto"
                         />
                         <a
                             href="https://github.com/surbhitt/machine-learning"
-                            className="text-xl font-extrabold mt-10 underline"
+                            className="text-xl font-extrabold underline"
                         >
                             Machine Learning
                         </a>
@@ -87,16 +94,18 @@ export default function projects() {
                         </div>
                     </div>
                     <div className="project-card p-4 sm:m-1 md:m-3 m-5 h-72 w-80 text-white">
-                        <img src="#" />
+                        <img
+                            src="/proj_tartarus.png"
+                            className="h-40 mx-auto"
+                        />
                         <a
                             href="https://github.com/surbhitt/tartarus"
                             className="text-xl font-extrabold mt-10 underline"
                         >
                             Tartarus
                         </a>
-                        <div className="text-sm font-semibold mt-4">
-                            A password manager written in js cryptographically
-                            secure with remote database.
+                        <div className="text-sm font-semibold mt-2">
+                            A password manager written in py.
                         </div>
                     </div>
                 </div>
