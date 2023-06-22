@@ -1,323 +1,165 @@
-/******************* css reset ************************/
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-    display: block;
-}
-body {
-    line-height: 1;
-}
-ol,
-ul {
-    list-style: none;
-}
-blockquote,
-q {
-    quotes: none;
-}
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-    content: '';
-    content: none;
-}
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
-}
-/********************************************************/
-
-@font-face {
-    font-family: 'Mali-Regular';
-    src: url('/Mali-Regular.ttf') format('truetype');
-}
-
-@font-face {
-    font-family: 'Skranji-Regular';
-    src: url('/Skranji-Regular.ttf') format('truetype');
-}
-
-@media (min-width: 340px) {
-    .raven {
-        margin-top: 40px;
-        height: 250px;
-    }
-}
-
-@media (min-width: 768px) {
-    .raven {
-        height: 400px;
-    }
-    .card {
-        width: 160px;
-    }
-}
-
-@media (min-width: 1280px) {
-    .raven {
-        height: 500px;
-    }
-}
-
 .bkg-img-head {
-    background-image: linear-gradient(0deg, rgba(1, 1, 1, 1), rgba(1, 1, 1, 0)),
-        url('/smooth-gray-background.jpg');
-    height: 100vh;
+  background-image: linear-gradient(0deg, rgba(1, 1, 1, 1), rgba(1, 1, 1, 0)),
+    url('/smooth-gray-background.jpg');
+  height: 100vh;
 }
 
 @keyframes slideInLeft {
-    from {
-        transform: translateX(-300px);
-    }
-
-    to {
-        transform: translateX(0);
-    }
+  from {
+    transform: translateX(-300px);
+  }
+  to {
+    transform: translateX(0);
+  }
 }
 
 .name {
-    position: relative;
-    animation-name: popOut;
-    animation-duration: 1s;
-    animation-fill-mode: forwards;
+  position: relative;
+  animation-name: popOut;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
 }
 
 .contact {
-    position: relative;
-    animation-name: lowerDown;
-    animation-duration: 1s;
-    animation-fill-mode: forwards;
+  position: relative;
+  animation-name: lowerDown;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes rgbAnimation {
+  0% {
+    color: '#F8F6F4';
+  }
+  33% {
+    color: '#E3F4F4';
+  }
+  66% {
+    color: red;
+  }
+  100% {
+    color: '#C4DFDF';
+  }
+}
+
+.rgb-animation {
+  animation: rgbAnimation 3s linear infinite;
 }
 
 .socials {
-    position: relative;
-    animation-name: lowerDown;
-    animation-duration: 1s;
-    animation-fill-mode: forwards;
+  position: relative;
+  animation-name: lowerDown;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
 }
 
 @keyframes popOut {
-    0% {
-        transform: translateY(100%);
-        opacity: 0;
-    }
-    100% {
-        transform: translateY(0%);
-        opacity: 1;
-    }
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
 }
 
 @keyframes lowerDown {
-    0% {
-        transform: translateY(-50%);
-        opacity: 0;
-    }
-    100% {
-        transform: translateY(50%);
-        opacity: 1;
-    }
+  0% {
+    transform: translateY(-50%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(50%);
+    opacity: 1;
+  }
 }
 
 .titlenav {
-    width: 100vw;
-    height: 80px;
-    background-color: rgba(30, 30, 35, 0.7);
-    color: white;
-    font-family: 'Mali-Regular', sans-serif;
+  width: 100vw;
+  height: 80px;
+  background-color: rgba(30, 30, 35, 0.7);
+  color: white;
 }
 
 .card-container {
-    position: relative;
-    z-index: 1;
-    height: 100px;
-    width: 80vw;
+  position: relative;
+  z-index: 1;
+  height: 100px;
+  width: 80vw;
 }
 
 .name {
-    font-family: 'Skranji-Regular', sans-serif;
-}
-
-.contact {
-    font-family: 'Mali-Regular', sans-serif;
+  font-family: 'Skranji', cursive;
 }
 
 .card {
-    font-family: 'Mali-Regular', sans-serif;
-    /*border-color: rgba(255, 8, 62, 1);*/
-    width: 200px;
+  /*border-color: rgba(255, 8, 62, 1);*/
+  width: 200px;
 }
 .card:hover {
-    background-color: rgba(255, 8, 62, 0.3);
+  background-color: rgba(255, 8, 62, 0.3);
 }
 
 .projects {
-    min-height: 100vh;
+  min-height: 100vh;
 }
 
 .projects-section {
-    background-image: linear-gradient(
-            180deg,
-            rgba(0, 0, 0, 1),
-            rgba(1, 1, 1, 0)
-        ),
-        linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(1, 1, 1, 0)),
-        url('/backdrop.jpeg');
-    object-fit: cover;
-    font-family: 'Mali-Regular';
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 1), rgba(1, 1, 1, 0)),
+    linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(1, 1, 1, 0)),
+    url('/backdrop.jpeg');
+  object-fit: cover;
 }
 
 .project-card {
-    --tw-bg-opacity: 0.7;
-    background-color: rgb(24 24 27 / var(--tw-bg-opacity));
+  --tw-bg-opacity: 0.7;
+  background-color: rgb(24 24 27 / var(--tw-bg-opacity));
 }
 
 .project-card:hover {
-    box-shadow: 0px 0px 10px 5px gray;
+  box-shadow: 0px 0px 10px 5px gray;
 }
 
 .grid-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    height: 100%;
-    width: 100%;
-    place-items: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  height: 100%;
+  width: 100%;
+  place-items: center;
 }
 
 .grid-item {
-    --tw-bg-opacity: 0.3;
-    background-color: rgb(156 4 36 / var(--tw-bg-opacity));
+  --tw-bg-opacity: 0.3;
+  background-color: rgb(156 4 36 / var(--tw-bg-opacity));
 }
 
 .techst-section {
-    height: 100vh;
-    background-image: linear-gradient(
-            180deg,
-            rgba(0, 0, 0, 1),
-            rgba(1, 1, 1, 0)
-        ),
-        linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(1, 1, 1, 0)),
-        url('/techstbkg.jpeg');
-    font-family: 'Mali-Regular';
+  height: 100vh;
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 1), rgba(1, 1, 1, 0)),
+    linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(1, 1, 1, 0)),
+    url('/techstbkg.jpeg');
 }
 
 .nordic-signs {
-    position: absolute;
-    top: 0;
-    left: 0;
-    zindex: -1;
-    opacity: 20%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  zindex: -1;
+  opacity: 20%;
 }
 
 .contact-container {
-    height: 100vh;
-    background-image: linear-gradient(
-            180deg,
-            rgba(0, 0, 0, 1),
-            rgba(1, 1, 1, 0)
-        ),
-        url('/contactbkg.jpeg');
-    background-size: cover;
-    font-family: 'Mali-Regular';
+  height: 100vh;
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 1), rgba(1, 1, 1, 0)),
+    url('/contactbkg.jpeg');
+  background-size: cover;
 }
 
-.button {
-    background-color: rgb(156, 4, 36);
+.front {
+  will-change: transform;
+  transition: transform 250ms;
+}
+.pushable:hover .front {
+  transform: translateY(-6px);
 }
