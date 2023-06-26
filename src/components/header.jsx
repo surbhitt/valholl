@@ -19,14 +19,18 @@ export default function Header(props) {
             </h1>
             <div className="contact flex mt xs:mx-auto">
               <p className="xs:text-sm sm:text-md md:text-lg lg:text-xl xl:text-2xl text-md mr-1">
-                surbhit.thakur@gmail.com,{' '}
+                surbhit.thakur@gmail.com,
               </p>
               <p className="xs:text-sm sm:text-md md:text-lg lg:text-xl xl:text-2xl text-md">
                 9650171042
               </p>
             </div>
             <div className="socials flex mt-3 items-center xs:mx-auto ml-auto">
-              <a className="mr-10" href="https://github.com/surbhitt/">
+              <a
+                className="mr-10"
+                href="/resume.pdf"
+                download="resume surbhit thakur.pdf"
+              >
                 <img
                   title="download resume"
                   src="/resume.png"
