@@ -7,10 +7,10 @@ export default function Header(props) {
 
   return (
     <div>
-      <div className="flex flex-col justify-center text-white w-full h-screen">
+      <div className="flex flex-col bg-gradient-to-t from-black justify-center text-white w-full h-screen">
         <img
           src="/cell.gif"
-          className="absolute xs:top-14 md:top-20 xs:left-[1.5rem] md:left-[9rem] lg:left-[45rem] xs:w-[25rem] sm:w-[30rem] md:w-[43rem] lg:w-[50rem] z-[-1] opacity-10"
+          className="absolute xs:top-14 md:top-20 xs:left-[1.5rem] md:left-[9rem] lg:left-[45rem] xs:w-[25rem] sm:w-[30rem] md:w-[43rem] lg:w-[50rem] z-[-1] opacity-30"
         />
         <div className="flex flex-col items-center justify-center h-60 mx-auto mb-10 md:mb-14 lg:mb-14">
           <div className="intro flex flex-col h-2/3 justify-center ">
@@ -63,24 +63,18 @@ export default function Header(props) {
               </a>
             </div>
           </div>
-          {/*<div className="raven-image-container">
-            <img src="/raven_no_back.png" alt="raven" className="raven" />
-  </div>*/}
         </div>
         <p className="text-justify xs:text-sm md:text-xl w-2/3 mx-auto">
-          I am a <span>3rd year B. Tech. Computer Science</span> student. The
-          first icon from the lest under my email has my resume. Passionate
-          about computers, literally everthing about computers from low-level
-          hardware stuff (wanna learn more) to blockchains (currently working
-          on). I spend my leisure watching random tech related vids on youtube.
-          I also enjoy creative coding.
+          I am a 3rd year B. Tech. Computer Science student. The first icon from
+          the left under my email has my resume. Passionate about computers,
+          exploring everything from assembly to solidity. In my leisure I enjoy
+          creative coding.
           <br /> <br />
         </p>
         <p className="rgb-animation text-center xs:text-sm md:text-xl">
           Python | C++ | JavaScript
         </p>
         <nav className="flex flex-col xs:mt-10 md:mt-20 items-center">
-          {/*<hr className="w-4/5" />*/}
           <div className="lg:px-72 flex justify-evenly items-center w-4/5">
             <ScrollLink
               to="projects"

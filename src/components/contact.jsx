@@ -4,10 +4,10 @@ import 'tailwindcss/tailwind.css'
 
 export default function ContactForm() {
   return (
-    <div className="contact-container flex items-center justify-center relative">
-      <section className="text-gray-700 body-font relative">
+    <div className="contact-container  flex items-center justify-center relative">
+      <section className="text-gray-700 border border-gray-400 border-solid rounded-3xl">
         <div className="container px-5 py-24 mx-auto">
-          <div className="flex flex-col text-center w-full mb-12">
+          <div className="flex flex-col text-center w-full">
             <div
               className="flex items-center justify-center sm:text-3xl text-2xl font-medium title-font mb-4 text-white"
               style={{
@@ -17,6 +17,9 @@ export default function ContactForm() {
               <span className="ml-4">Query.Me</span>
             </div>
           </div>
+          <p className="text-center text-white font-bold mb-10">
+            I will get back to you as soon as I can.
+          </p>
           <div className="lg:w-1/2 md:w-2/3 mx-auto">
             <div className="flex flex-wrap -m-2">
               <div className="p-2 w-1/2">

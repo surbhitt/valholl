@@ -36,10 +36,7 @@ export default function projects() {
             </div>
           </div>
           <div className="project-card p-4 sm:m-1 md:m-3 m-5 h-72 w-80 text-white">
-            <img
-              src="https://raw.githubusercontent.com/surbhitt/cellular-automata/main/assets/gameoflife.gif"
-              className="h-40 mx-auto"
-            />
+            <img src="/cell2.gif" className="h-40 mx-auto" />
             <a
               href="https://github.com/surbhitt/cellular-automata"
               className="text-xl font-extrabold mt-4 underline"

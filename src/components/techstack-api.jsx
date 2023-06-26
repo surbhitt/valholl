@@ -3,7 +3,8 @@ import axios from 'axios'
 
 export default function TechStack() {
   // github stuff gotta keep this SECRET
-  const accessToken = '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'
+  // revoked 
+    const accessToken = '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'
   const baseUrl = 'https://api.github.com'
   const reposEndpnt = '/users/surbhitt/repos'
 

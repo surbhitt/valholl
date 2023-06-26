@@ -7,12 +7,8 @@ import ContactForm from './components/contact'
 import { Element } from 'react-scroll'
 
 function App() {
-  const [projButton, setProjButton] = useState(false)
-  const [techstButton, setTechstButton] = useState(false)
-  const [contactButton, setContactButton] = useState(false)
-
   return (
-    <div className="">
+    <div>
       <Navbar />
       <Header />
       <Element name="projects">
