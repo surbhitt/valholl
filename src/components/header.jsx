@@ -34,7 +34,7 @@ export default function Header(props) {
                 <img
                   title="download resume"
                   src="/resume.png"
-                  className="xs:h-6 md:h-9 h-12"
+                  className="xs:h-6 xs:w-6 md:h-9 md:w-9"
                   alt="Github"
                 />
               </a>
@@ -42,7 +42,7 @@ export default function Header(props) {
                 <img
                   title="github"
                   src="/github.png"
-                  className="xs:h-6 md:h-9 h-12"
+                  className="xs:h-6 xs:w-6 md:h-9 md:w-9"
                   alt="Github"
                 />
               </a>
@@ -53,7 +53,7 @@ export default function Header(props) {
                 <img
                   title="linkedin"
                   src="/linkedin.png"
-                  className="xs:h-6 md:h-9 h-12"
+                  className="xs:h-6 xs:w-6 md:h-9 md:w-9"
                   alt="Linkedin"
                 />
               </a>
@@ -61,7 +61,7 @@ export default function Header(props) {
                 <img
                   title="leetcode"
                   src="/leetcode.png"
-                  className="xs:h-6 md:h-9 h-12"
+                  className="xs:h-6 xs:w-6 md:h-9 md:w-9"
                   alt="Leetcode"
                 />
               </a>
