@@ -71,7 +71,7 @@ export default function ContactForm() {
               <span className="ml-4">Query.Me</span>
             </div>
           </div>
-          <p className="text-center text-white font-bold mb-10">
+          <p className="text-center text-white font-bold xs:text-xs md:text-lg mb-10">
             I will get back to you as soon as I can.
           </p>
           <div className="lg:w-1/2 md:w-2/3 mx-auto">

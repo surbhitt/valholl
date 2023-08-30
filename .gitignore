@@ -26,3 +26,5 @@ dist-ssr
 fetchLang.mjs
 languages.txt
 .prettierrc.json
+
+.env

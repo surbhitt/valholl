@@ -1,96 +1,123 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './styles.css'
 export default function projects() {
+  const projs = [
+    {
+      name: 'mini-projects',
+      desc: 'Collection of mini projects... A program to render voronoi diag based on the following norms:-Euclidean Manhattan and store that picture in PPM format.blah blah blah',
+      link: 'https://github.com/surbhitt/mini-projects/',
+      img: 'https://raw.githubusercontent.com/surbhitt/mini-projects/main/VoronoiDiagram/voronoi_man.png',
+      langs: ['C++', 'C', 'JavaScript', 'Python'],
+      scope:
+        'A collection of various projects written in various languages. These are mini-projects that are standalone in nature.',
+    },
+    {
+      name: 'qaahl',
+      desc: 'Qaahl a simple webcrawler that can generate a graphical view of the crawled path. More of a visualization of how various hyperlinks connect. A module to scrap the pages crawled. Depth limited crawling. Multithreading to be implemented.',
+      link: 'https://github.com/surbhitt/qaahl/',
+      img: 'https://raw.githubusercontent.com/surbhitt/qaahl/main/assets/qaahl_screen.png',
+      langs: ['Python'],
+      scope: 'can be utilised to scrape data for machine learning.',
+    },
+    {
+      name: 'egg',
+      desc: 'Engine for game and graphics. A single-file/header-only library in C++ for creating graphics; with extension for implementing a game loop. Utilising the terminals in-built capability to render truecolor (xterm-256color).[NOTE] check dev branch porting to gcc from msvc. The code was written on a windows machine with the target as windows, compiled using the MSVC build tools. In the process of porting to gcc and making the code linux compatible.',
+      link: 'https://github.com/surbhitt/egg',
+      img: 'https://raw.githubusercontent.com/surbhitt/egg/main/assets/egg.png',
+      langs: ['C++'],
+      scope: 'sprite generator and physics engine to be implemented',
+    },
+    {
+      name: 'brainpoke',
+      desc: 'A programming env for brainf**k',
+      link: 'https://github.com/surbhitt/brainpoke',
+      img: 'https://placehold.co/600x400/000000/FFFFFF/png',
+      langs: ['Python'],
+      scope: '...',
+    },
+    {
+      name: 'tartarus',
+      desc: '...',
+      link: '/proj_tartarus.png',
+      img: '/proj_tartarus.png',
+      langs: ['Python'],
+      scope: '...',
+    },
+  ]
+
+  const [active, setActive] = useState(projs[0].name)
+  const [desc, setDesc] = useState(projs[0].desc)
+  const [link, setLink] = useState(projs[0].link)
+  const [img, setImg] = useState(projs[0].img)
+  const [langs, setLang] = useState(projs[0].langs)
+  const [scope, setScope] = useState(projs[0].scope)
+
+  const setData = (proj) => {
+    setActive(proj.name)
+    setDesc(proj.desc)
+    setLink(proj.link)
+    setImg(proj.img)
+    setLang(proj.langs)
+    setScope(proj.scope)
+  }
+
   return (
     <div className="projects-section">
-      <div className="overlay"></div>
-      <div className="projects flex flex-col justify-center">
-        <div className="project-container flex xs:flex-col md:flex-row justify-center">
-          <div className="project-card p-4 sm:m-1 md:m-3 m-5 h-72 w-80 text-white">
-            <img src="https://raw.githubusercontent.com/surbhitt/mini-projects/main/ImgView/assets/moon450x510test.png" />
-            <a
-              href="https://github.com/surbhitt/mini-projects"
-              className="text-xl font-extrabold mt-4 underline"
-            >
-              Mini-Projects
-            </a>
-            <div className="text-sm font-semibold mt-2">
-              A repository containing small projects written in various
-              languages.
-            </div>
+      <div className="projects flex items-center justify-center">
+        <div className="text-white xs:h-[600px] md:h-[800px] md:w-5/6 max-w-[1200px] rounded-md p-2 border-2 border-primary border-solid">
+          <div className="flex xs:gap-1 md:gap-5 font-semibold text-xl w-full justify-center">
+            {projs.map((proj, id) => {
+              return (
+                <div
+                  key={id}
+                  onClick={() => {
+                    setData(proj)
+                  }}
+                  className={` ${
+                    active == proj.name
+                      ? 'bg-opacity-60 cursor-default'
+                      : 'bg-opacity-20 cursor-pointer'
+                  } flex p-2 text-gray-300 xs:text-xs md:text-xl hover:bg-opacity-60 duration-300 bg-primary rounded-md`}
+                >
+                  {proj.name}
+                </div>
+              )
+            })}
           </div>
-          <div className="project-card p-4 sm:m-1 md:m-3 m-5 h-72 w-80 text-white">
-            <img src="" />
-            <a
-              href="https://github.com/surbhitt/console-game-engine"
-              className="text-xl font-extrabold mt-10 underline"
-            >
-              Console-Game-Engine
-            </a>
-            <div className="text-sm font-semibold mt-4">
-              A header only style library written as a wrapper around the
-              terminal to utilise it as a pixel buffer. It utilises the WinAPI
-              to take control (a handle) of the terminal and manipulate the
-              buffer to populate it with various kinds of values that act as a
-              glyph and can be rendered as pixels on screen.
+          <div className="gap-5 p-2 mt-4 xs:h-[520px] md:h-[700px] w-full rounded-md bg-primary bg-opacity-20 xs:text-xs md:text-xl">
+            <div className="flex justify-center items-center text-white h-1/2">
+              <img src={img} className="xs:h-2/3 md:h-full" />
+              <div className="flex flex-col h-fit ml-2 gap-2">
+                <a href={link}>
+                  <img src="/link.svg" className="xs:h-5 md:h-7" />
+                </a>
+                {langs.map((lang, id) => {
+                  return (
+                    <img
+                      key={id}
+                      src={`\\lang-icons\\${lang}.svg`}
+                      className="xs:h-4 md:h-7"
+                    />
+                  )
+                })}
+              </div>
             </div>
-          </div>
-          <div className="project-card p-4 sm:m-1 md:m-3 m-5 h-72 w-80 text-white">
-            <img src="/cell2.gif" className="h-40 mx-auto" />
-            <a
-              href="https://github.com/surbhitt/cellular-automata"
-              className="text-xl font-extrabold mt-4 underline"
-            >
-              Cellular-Automata
-            </a>
-            <div className="text-sm font-semibold mt-2">
-              A cellular automaton written rendered using{' '}
-              <a
-                href="https://github.com/surbhitt/console-game-engine"
-                className="text-blue-300"
-              >
-                consolegameengine
-              </a>
-              .
-            </div>
-          </div>
-        </div>
-        <div className="project-container flex xs:flex-col md:flex-row justify-center">
-          <div className="project-card p-4 sm:m-1 md:m-3 m-5 h-72 w-80 text-white">
-            <img src="/proj_barnsleyfern.jpeg" className="h-44 mx-auto" />
-            <a className="text-xl font-extrabold mt-10 underline">
-              Processing Based
-            </a>
-            <div className="text-sm font-semibold mt-4">
-              Part of Creative coding, graphics rendered using p5js.
-            </div>
-          </div>
-          <div className="project-card p-4 sm:m-1 md:m-3 m-5 h-72 w-80 text-white">
-            <img
-              src="https://raw.githubusercontent.com/surbhitt/machine-learning/master/perceptron/assets/modelwt100.jpg"
-              className="h-44 mx-auto"
-            />
-            <a
-              href="https://github.com/surbhitt/machine-learning"
-              className="text-xl font-extrabold underline"
-            >
-              Machine Learning
-            </a>
-            <div className="text-sm font-semibold mt-4">
-              A very rudimentary neural network.
-            </div>
-          </div>
-          <div className="project-card p-4 sm:m-1 md:m-3 m-5 h-72 w-80 text-white">
-            <img src="/proj_tartarus.png" className="h-40 mx-auto" />
-            <a
-              href="https://github.com/surbhitt/tartarus"
-              className="text-xl font-extrabold mt-10 underline"
-            >
-              Tartarus
-            </a>
-            <div className="text-sm font-semibold mt-2">
-              A password manager written in py.
-            </div>
+            <table className="xs:mt-0 md:mt-5 w-full">
+              <tbody>
+                <tr>
+                  <td className="font-bold pb-5 text-gray-400 border-b-2 border-solid border-primary">
+                    Description:
+                  </td>
+                  <td className="pl-5 pb-5 border-b-2 border-solid border-primary">
+                    {desc}
+                  </td>
+                </tr>
+                <tr>
+                  <td className="font-bold py-5 text-gray-400">Scope:</td>
+                  <td className="pl-5">{scope}</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>

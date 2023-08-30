@@ -1,96 +1,120 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './styles.css'
-import ChartComponent from './pieChart'
+import fetchData from '/lib/fetchData'
 
-let languages = {
-    JavaScript: 85455,
-    HTML: 4426,
-    CSS: 6846,
-    'C++': 108076,
-    Batchfile: 1080,
-    Python: 86071,
-    Shell: 944,
-    'Vim Script': 97,
-    C: 701960,
-    Rust: 9098,
-}
-
-/*
-        __________________________on demand fetching of data from api 
-
-const accessToken = "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";
-const baseUrl = "https://api.github.com";
-let reposEndpnt = "/users/surbhitt/repos";
-
-let repos = [];
-
-function fetchData () {
-	fetch(baseUrl + reposEndpnt, {
-  headers: {
-	  Authorization: `Bearer ${accessToken}`,
-	},
-})
-.then((response) => response.json())
-.then((data) => {
-    for (let repo of data) repos.push(repo["name"]);
-    for (let repo of repos) {
-		fetch(baseUrl + "/repos/surbhitt/" + repo + "/languages", {
-			headers: {
-				Authorization: `Bearer ${accessToken}`,
-			},
-		})
-        .then((response) => response.json())
-        .then((data) => {
-			for (let lang in data) {
-				if (lang in languages) languages[lang] += data[lang];
-				else languages[lang] = data[lang];
-			}
-		});
-    }
-  })
-  .catch((error) => {
-	  console.error(error);
-	});
-}
-
-fetchData();
-console.log("Lines of code for corresponding languages");	
-console.log(languages);
-*/
-
-const gridItems = []
-function populateGrid() {
-    for (let lang in languages) {
-        const existingItem = gridItems.find((item) => item.title === lang)
-        if (!existingItem || languages[lang] !== existingItem.loc) {
-            gridItems.push({
-                title: lang,
-                loc: languages[lang],
-                id: languages[lang],
-            })
-        }
-    }
+let lang_desc = {
+  Python: {
+    icon: '/lang-icons/Python.svg',
+    lib: 'Beautiful Soup4, Selenium, Requests',
+  },
+  'C++': {
+    icon: '/lang-icons/C++.svg',
+    lib: 'stl, stb-image, termio, ncurses',
+  },
+  Batchfile: { icon: '/lang-icons/Batchfile.svg', lib: '...' },
+  JavaScript: {
+    icon: '/lang-icons/JavaScript.svg',
+    lib: 'Reactjs, Nextjs, Mailjs, Toastify, MaterialUI, RadixUI, ReactIcons',
+  },
+  CSS: { icon: '/lang-icons/CSS.svg', lib: 'TailwindCSS' },
+  HTML: { icon: '/lang-icons/HTML.svg', lib: 'BootStrap' },
+  Shell: { icon: '/lang-icons/Shell.svg', lib: '...' },
+  'Vim Script': { icon: '/lang-icons/Vim Script.svg', lib: '...' },
+  C: { icon: '/lang-icons/C.svg', lib: 'stb-image' },
+  filler: { icon: '/lang-icons/C.svg', lib: '...' },
 }
 
 const TechStack = () => {
-    populateGrid()
+  const [loading, setLoading] = useState(true)
+  const [languages, setLanguages] = useState([])
+  const [projects, setProj] = useState('...')
+  const [active, setActive] = useState('Python')
+  const [libraries, setLib] = useState(lang_desc[active]['lib'])
+  const getLang = async () => {
+    setLoading(true)
+    try {
+      const fetchedLanguages = await fetchData()
+      setLanguages(Array.from(fetchedLanguages))
+      setLoading(false)
+    } catch (error) {
+      console.error('Error fetching languages:', error)
+      setLoading(false)
+    }
+    setLoading(false)
+  }
 
-    return (
-        <div className="techst-section relative flex items-center justify-evenly xs:flex-col lg:flex-row">
-            <div className="grid-container xs:h-1/5 md:h-3/5 md:w-5/6 lg:w-1/2">
-                {gridItems.map((item) => (
-                    <div
-                        className="grid-item flex flex-col justify-center xs:text-xs md:text-base xs:h-14 xs:w-28 md:h-20 lg:h-32 md:w-52 text-white m-2"
-                        key={item.id}
-                    >
-                        <h3 className="font-extrabold ml-5">{item.title}</h3>
-                        <div className="ml-3">LOC: {item.loc}</div>
-                    </div>
-                ))}
+  useEffect(() => {
+    getLang()
+  }, [])
+
+  const assignValues = (lang) => {
+    setActive(lang)
+    console.log('setting for ', lang, 'value ', lang_desc[lang]['lib'])
+    setLib(lang_desc[lang]['lib'])
+    // setProj(lang_desc[lang])
+  }
+
+  return (
+    <div className="flex techst-section items-center justify-center">
+      {!loading ? (
+        <div className="flex xs:flex-col md:flex-row xs:w-[360px] md:w-5/6 max-w-[1000px] border-2 border-solid border-red-800 p-2 rounded-md">
+          <div className="xs:grid xs:grid-cols-2 xs:gap-2 sm:flex sm:flex-col h-full w-fit items-center">
+            {languages.map((lang, id) => (
+              <div
+                key={id}
+                onClick={() => {
+                  assignValues(lang)
+                }}
+                className={`flex text-white xs:p-1 md:p-3 md:my-2 xs:w-[170px] sm:w-[200px] bg-primary ${
+                  active === lang
+                    ? 'bg-opacity-60 cursor-default'
+                    : 'bg-opacity-20 cursor-pointer'
+                } hover:bg-opacity-60 items-center rounded-md duration-300`}
+              >
+                <img
+                  src={
+                    lang_desc[lang].icon
+                      ? lang_desc[lang].icon
+                      : lang_desc[filler].icon
+                  }
+                  className="xs:h-8 md:h-10"
+                />
+                <div className="xs:text-xs md:text-lg mx-5">{lang}</div>
+              </div>
+            ))}
+          </div>
+          <div className="flex flex-col xs:gap-2 xs:mt-5 md:mt-0 w-full md:mr-3">
+            <div className="w-full xs:max-w-[500px] md:max-w-full xs:p-3 md:p-10 bg-primary bg-opacity-20 md:m-3 rounded-md text-gray-400 xs:text-xs md:text-lg font-semibold">
+              <div className="underline underline-offset-8">
+                Libraries, Frameworks and Related technologies
+              </div>
+              <div className="xs:mt-2 md:mt-10 text-gray-300">{libraries}</div>
             </div>
-            <ChartComponent gridItems={gridItems} />
+            <div className="w-full xs:p-3 md:p-10 bg-primary bg-opacity-20 md:m-3 rounded-md text-gray-400 xs:text-xs md:text-lg font-semibold">
+              <div className="underline underline-offset-8">Projects</div>
+              <div className="xs:mt-2 md:mt-10 text-gray-300">{projects}</div>
+            </div>
+          </div>
         </div>
-    )
+      ) : (
+        <div className="flex xs:flex-col md:flex-row xs:w-[360px] md:w-5/6 max-w-[1000px] border border-solid border-red-800 p-2 rounded-md animate-pulse">
+          <div className="xs:grid xs:grid-cols-2 xs:gap-2 sm:flex sm:flex-col h-full w-fit items-center">
+            {Array(10)
+              .fill(0)
+              .map((lang, id) => (
+                <div
+                  key={id}
+                  className="flex text-white xs:p-1 md:p-3 md:my-2 xs:w-[170px] sm:w-[200px] bg-primary bg-opacity-20 items-center rounded-md"
+                >
+                  <div className="text-lg mx-5 text-gray-300">...</div>
+                </div>
+              ))}
+          </div>
+          <div className="w-full xs:h-[200px] md:h-[500px] bg-primary bg-opacity-20 md:ml-3 xs:mt-5 md:mt-2 rounded-md"></div>
+        </div>
+      )}
+    </div>
+  )
 }
 
 export default TechStack

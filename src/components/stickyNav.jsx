@@ -7,17 +7,13 @@ export default function Navbar() {
   const [scrollToSection, setScrollToSection] = useState(false)
   const [scrollPosition, setScrollPosition] = useState(0)
 
-  let windowHeight = window.scrollY
   let activeButton =
-    'bg-primary xs:text-xs sm:text-sm md:text-sm lg:text-xl font-semibold xs:h-6 md:h-8 md:w-20 lg:h-12 lg:w-32 rounded-full'
+    'bg-primary xs:text-xs sm:text-sm md:text-sm lg:text-xl font-semibold xs:h-6 md:h-8 md:w-20 lg:h-12 lg:w-32 rounded-full xs:px-1 md:px-0'
   let inactiveButton =
-    'xs:text-xs sm:text-sm md:text-sm lg:text-xl font-semibold xs:h-6 md:h-8 md:w-20 lg:h-12 lg:w-32 rounded-full'
+    'xs:text-xs sm:text-sm md:text-sm lg:text-xl font-semibold xs:h-6 md:h-8 md:w-20 lg:h-12 lg:w-32 rounded-full xs:px-1 md:px-0'
 
   useEffect(() => {
     const stickNavbar = () => {
-      {
-        /*fix this the problem with sticky bar not appearing in the proj section*/
-      }
       const viewportHeight = 900
       const currentScrollPostion = window.scrollY
       setScrollPosition(currentScrollPostion)
