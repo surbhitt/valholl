@@ -8,7 +8,7 @@ import { Element } from 'react-scroll'
 
 function App() {
   return (
-    <div>
+    <div className="max-w-[1922px] mx-auto">
       <Navbar />
       <Header />
       <Element name="projects">

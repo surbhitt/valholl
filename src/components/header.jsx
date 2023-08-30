@@ -6,7 +6,7 @@ export default function Header(props) {
   const [scrollToSection, setScrollToSection] = useState(false)
 
   return (
-    <div className="flex flex-col bg-gradient-to-t from-black justify-center text-white w-full h-screen">
+    <div className="relative flex flex-col bg-gradient-to-t from-black justify-center text-white w-full h-screen">
       <img
         src="/cell.gif"
         className="absolute xs:top-28 md:top-20 xs:left-[1.5rem] md:left-[9rem] lg:left-[45rem] xs:w-[23rem] sm:w-[30rem] md:w-[43rem] lg:w-[50rem] z-[-1] opacity-30"

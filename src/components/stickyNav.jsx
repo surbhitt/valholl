@@ -32,66 +32,66 @@ export default function Navbar() {
   }, [])
 
   return (
-    <div
-      className={`titlenav flex items-center xs:h-14 xs:p-3 md:p-10 ${stickyClass}`}
-    >
-      <span className="xs:text-sm sm:text-lg md:text-2xl font-semibold">
-        Surbhit thakur
-      </span>
-      <div className="flex xs:w-48 md:w-64 lg:w-1/4 justify-between items-center ml-auto mr-2 border">
-        <ScrollLink
-          to="projects"
-          smooth={true}
-          duration={500}
-          offset={-50}
-          isDynamic={true}
-          spy={scrollToSection}
-          activeClass="active"
-        >
-          <button
-            className={
-              scrollPosition > 800 && scrollPosition < 1490
-                ? inactiveButton
-                : activeButton
-            }
+    <div className={`titlenav ${stickyClass}`}>
+      <div className="mx-auto flex max-w-[1922px] items-center text-white bg-[#1e2323b3] xs:h-14 xs:p-3 md:p-10">
+        <span className="ml-5 xs:text-sm sm:text-lg md:text-2xl font-semibold">
+          Surbhit thakur
+        </span>
+        <div className="flex xs:w-48 md:w-64 lg:w-1/4 justify-between items-center ml-auto mr-2 border">
+          <ScrollLink
+            to="projects"
+            smooth={true}
+            duration={500}
+            offset={-50}
+            isDynamic={true}
+            spy={scrollToSection}
+            activeClass="active"
           >
-            Projects
-          </button>
-        </ScrollLink>
-        <ScrollLink
-          to="techstack"
-          smooth={true}
-          duration={500}
-          offset={-50}
-          isDynamic={true}
-          spy={scrollToSection}
-          activeClass="active"
-        >
-          <button
-            className={
-              scrollPosition > 1490 && scrollPosition < 2240
-                ? inactiveButton
-                : activeButton
-            }
+            <button
+              className={
+                scrollPosition > 800 && scrollPosition < 1490
+                  ? inactiveButton
+                  : activeButton
+              }
+            >
+              Projects
+            </button>
+          </ScrollLink>
+          <ScrollLink
+            to="techstack"
+            smooth={true}
+            duration={500}
+            offset={-50}
+            isDynamic={true}
+            spy={scrollToSection}
+            activeClass="active"
           >
-            TechStack
-          </button>
-        </ScrollLink>
-        <ScrollLink
-          to="contact"
-          smooth={true}
-          duration={500}
-          offset={-50}
-          isDynamic={true}
-          spy={scrollToSection}
-          activeClass="active"
-        >
-          <button
-            className={scrollPosition > 2248 ? inactiveButton : activeButton}
+            <button
+              className={
+                scrollPosition > 1490 && scrollPosition < 2240
+                  ? inactiveButton
+                  : activeButton
+              }
+            >
+              TechStack
+            </button>
+          </ScrollLink>
+          <ScrollLink
+            to="contact"
+            smooth={true}
+            duration={500}
+            offset={-50}
+            isDynamic={true}
+            spy={scrollToSection}
+            activeClass="active"
           >
-            Contact
-          </button>
-        </ScrollLink>
+            <button
+              className={scrollPosition > 2248 ? inactiveButton : activeButton}
+            >
+              Contact
+            </button>
+          </ScrollLink>
+        </div>
       </div>
     </div>
   )
