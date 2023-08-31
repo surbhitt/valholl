@@ -10,7 +10,7 @@ export default function Navbar() {
   let activeButton =
     'bg-primary xs:text-xs sm:text-sm md:text-sm lg:text-xl font-semibold xs:h-6 md:h-8 md:w-20 lg:h-12 lg:w-32 rounded-full xs:px-1 md:px-0'
   let inactiveButton =
-    'xs:text-xs sm:text-sm md:text-sm lg:text-xl font-semibold xs:h-6 md:h-8 md:w-20 lg:h-12 lg:w-32 rounded-full xs:px-1 md:px-0'
+    'cursor-default xs:text-xs sm:text-sm md:text-sm lg:text-xl font-semibold xs:h-6 md:h-8 md:w-20 lg:h-12 lg:w-32 rounded-full xs:px-1 md:px-0'
 
   useEffect(() => {
     const stickNavbar = () => {

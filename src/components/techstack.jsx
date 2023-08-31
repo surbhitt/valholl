@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './styles.css'
 import fetchData from '/lib/fetchData'
 
-let lang_desc = {
+const lang_desc = {
   Python: {
     icon: '/lang-icons/Python.svg',
     lib: 'Beautiful Soup4, Selenium, Requests',
@@ -30,6 +30,7 @@ const TechStack = () => {
   const [projects, setProj] = useState('...')
   const [active, setActive] = useState('Python')
   const [libraries, setLib] = useState(lang_desc[active]['lib'])
+
   const getLang = async () => {
     setLoading(true)
     try {
@@ -48,8 +49,9 @@ const TechStack = () => {
   }, [])
 
   const assignValues = (lang) => {
-    setActive(lang)
-    console.log('setting for ', lang, 'value ', lang_desc[lang]['lib'])
+    if (lang in lang_desc) setActive(lang)
+    else setActive('filler')
+    console.log('setting for ', lang, 'value ', lang_desc['Python']['lib'])
     setLib(lang_desc[lang]['lib'])
     // setProj(lang_desc[lang])
   }
@@ -73,9 +75,9 @@ const TechStack = () => {
               >
                 <img
                   src={
-                    lang_desc[lang].icon
-                      ? lang_desc[lang].icon
-                      : lang_desc[filler].icon
+                    lang_desc[lang]['icon']
+                      ? lang_desc[lang]['icon']
+                      : lang_desc['filler']['icon']
                   }
                   className="xs:h-8 md:h-10"
                 />
