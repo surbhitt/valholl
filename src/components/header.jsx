@@ -24,9 +24,9 @@ export default function Header(props) {
               9650171042
             </p>
           </div>
-          <div className="socials flex mt-3 items-center xs:mx-auto ml-auto">
+          <div className="socials flex mt-3 items-center xs:mx-auto">
             <a
-              className="mr-10"
+              className="xs:mr-5 md:mr-10"
               href="/resume.pdf"
               download="resume surbhit thakur.pdf"
             >
@@ -37,7 +37,7 @@ export default function Header(props) {
                 alt="Github"
               />
             </a>
-            <a className="mr-10" href="https://github.com/surbhitt/">
+            <a className="xs:mr-5 md:mr-10" href="https://github.com/surbhitt/">
               <img
                 title="github"
                 src="/github.png"
@@ -45,7 +45,10 @@ export default function Header(props) {
                 alt="Github"
               />
             </a>
-            <a className="mr-10" href="https://linkedin.com/in/surbhitthakur/">
+            <a
+              className="xs:mr-5 md:mr-10"
+              href="https://linkedin.com/in/surbhitthakur/"
+            >
               <img
                 title="linkedin"
                 src="/linkedin.png"
@@ -53,10 +56,21 @@ export default function Header(props) {
                 alt="Linkedin"
               />
             </a>
-            <a className="" href="https://leetcode.com/savas_karanli/">
+            <a
+              className="xs:mr-5 md:mr-10"
+              href="https://leetcode.com/savas_karanli/"
+            >
               <img
                 title="leetcode"
                 src="/leetcode.png"
+                className="xs:h-6 xs:w-6 md:h-9 md:w-9"
+                alt="Leetcode"
+              />
+            </a>
+            <a className="" href="https://medium.com/@valholl/">
+              <img
+                title="leetcode"
+                src="/blog.svg"
                 className="xs:h-6 xs:w-6 md:h-9 md:w-9"
                 alt="Leetcode"
               />
