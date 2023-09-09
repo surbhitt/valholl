@@ -72,7 +72,7 @@ export default function Header(props) {
                 title="leetcode"
                 src="/blog.svg"
                 className="xs:h-6 xs:w-6 md:h-9 md:w-9"
-                alt="Leetcode"
+                alt="Blog"
               />
             </a>
           </div>
