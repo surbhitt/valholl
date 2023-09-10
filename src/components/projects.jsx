@@ -1,64 +1,40 @@
 import React, { useState } from 'react'
 import './styles.css'
+import ProjectContent from './projectContent'
+
 export default function projects() {
+  const base_url = 'https://github.com/surbhitt'
   const projs = [
     {
       name: 'mini-projects',
-      desc: 'Collection of mini projects... A program to render voronoi diag based on the following norms:-Euclidean Manhattan and store that picture in PPM format.blah blah blah',
-      link: 'https://github.com/surbhitt/mini-projects/',
-      img: 'https://raw.githubusercontent.com/surbhitt/mini-projects/main/VoronoiDiagram/voronoi_man.png',
       langs: ['C++', 'C', 'JavaScript', 'Python'],
-      scope:
-        'A collection of various projects written in various languages. These are mini-projects that are standalone in nature.',
     },
     {
       name: 'qaahl',
-      desc: 'Qaahl a simple webcrawler that can generate a graphical view of the crawled path. More of a visualization of how various hyperlinks connect. A module to scrap the pages crawled. Depth limited crawling. Multithreading to be implemented.',
-      link: 'https://github.com/surbhitt/qaahl/',
-      img: 'https://raw.githubusercontent.com/surbhitt/qaahl/main/assets/qaahl_screen.png',
       langs: ['Python'],
-      scope: 'can be utilised to scrape data for machine learning.',
     },
     {
       name: 'egg',
-      desc: 'Engine for game and graphics. A single-file/header-only library in C++ for creating graphics; with extension for implementing a game loop. Utilising the terminals in-built capability to render truecolor (xterm-256color).[NOTE] check dev branch porting to gcc from msvc. The code was written on a windows machine with the target as windows, compiled using the MSVC build tools. In the process of porting to gcc and making the code linux compatible.',
-      link: 'https://github.com/surbhitt/egg',
-      img: 'https://raw.githubusercontent.com/surbhitt/egg/main/assets/egg.png',
       langs: ['C++'],
-      scope: 'sprite generator and physics engine to be implemented',
     },
     {
       name: 'brainpoke',
-      desc: 'A programming env for brainf**k',
-      link: 'https://github.com/surbhitt/brainpoke',
-      img: 'https://placehold.co/600x400/000000/FFFFFF/png',
       langs: ['Python'],
-      scope: '...',
     },
     {
       name: 'tartarus',
-      desc: '...',
-      link: '/proj_tartarus.png',
-      img: '/proj_tartarus.png',
       langs: ['Python'],
-      scope: '...',
     },
   ]
 
   const [active, setActive] = useState(projs[0].name)
-  const [desc, setDesc] = useState(projs[0].desc)
-  const [link, setLink] = useState(projs[0].link)
-  const [img, setImg] = useState(projs[0].img)
+  const [link, setLink] = useState(`${base_url}/${active}`)
   const [langs, setLang] = useState(projs[0].langs)
-  const [scope, setScope] = useState(projs[0].scope)
 
   const setData = (proj) => {
     setActive(proj.name)
-    setDesc(proj.desc)
-    setLink(proj.link)
-    setImg(proj.img)
+    setLink(`${base_url}/mini-projects`)
     setLang(proj.langs)
-    setScope(proj.scope)
   }
 
   return (
@@ -84,25 +60,33 @@ export default function projects() {
               )
             })}
           </div>
-          <div className="gap-5 p-2 mt-4 xs:h-[520px] md:h-[700px] w-full rounded-md bg-primary bg-opacity-20 xs:text-xs md:text-xl">
-            <div className="flex justify-center items-center text-white h-1/2">
-              <img src={img} className="xs:h-2/3 md:h-full" />
-              <div className="flex flex-col h-fit ml-2 gap-2">
+          <div className="flex flex-col justify-center gap-5 p-2 mt-4 xs:h-[520px] md:h-[700px] w-full rounded-md bg-primary bg-opacity-20">
+            <div className="flex justify-center items-center text-white xs:text-xs md:text-xl">
+              <div className="flex h-fit ml-2 gap-2">
                 <a href={link}>
-                  <img src="/link.svg" className="xs:h-5 md:h-7" />
+                  <img src="/link.svg" className="h-7" />
                 </a>
                 {langs.map((lang, id) => {
                   return (
                     <img
                       key={id}
                       src={`\\lang-icons\\${lang}.svg`}
-                      className="xs:h-4 md:h-7"
+                      className="h-6"
                     />
                   )
                 })}
               </div>
             </div>
-            <table className="xs:mt-0 md:mt-5 w-full">
+            <ProjectContent proj={active} />
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+{
+  /* <table className="xs:mt-0 md:mt-5 w-full">
               <tbody>
                 <tr>
                   <td className="font-bold pb-5 text-gray-400 border-b-2 border-solid border-primary">
@@ -117,10 +101,5 @@ export default function projects() {
                   <td className="pl-5">{scope}</td>
                 </tr>
               </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
-  )
+            </table> */
 }
