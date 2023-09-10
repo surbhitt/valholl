@@ -134,3 +134,17 @@ table {
 body {
   font-family: 'Mali', cursive;
 }
+
+::-webkit-scrollbar {
+  width: 1em;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(24 24 27);
+  border-radius: 100vw;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(156, 4, 36);
+  border-radius: 100vw;
+}

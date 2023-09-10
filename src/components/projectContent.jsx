@@ -61,7 +61,7 @@ const ProjectContent = ({ proj }) => {
       {!loading ? (
         <MarkdownRenderer markdownContent={readmeContent} />
       ) : (
-        <span class="loader"></span>
+        <span className="loader"></span>
       )}
     </div>
   )

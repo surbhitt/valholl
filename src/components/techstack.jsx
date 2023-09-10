@@ -51,7 +51,6 @@ const TechStack = () => {
   const assignValues = (lang) => {
     if (lang in lang_desc) setActive(lang)
     else setActive('filler')
-    console.log('setting for ', lang, 'value ', lang_desc['Python']['lib'])
     setLib(lang_desc[lang]['lib'])
     // setProj(lang_desc[lang])
   }
