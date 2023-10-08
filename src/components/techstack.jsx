@@ -1,60 +1,65 @@
-import React, { useEffect, useState } from 'react'
-import './styles.css'
-import fetchData from '/lib/fetchData'
+import { useEffect, useState } from "react";
+import "./styles.css";
+import fetchData from "/lib/fetchData";
 
 const lang_desc = {
   Python: {
-    icon: '/lang-icons/Python.svg',
-    lib: 'Beautiful Soup4, Selenium, Requests',
+    icon: "/lang-icons/Python.svg",
+    lib: "Beautiful Soup4, Selenium, Requests",
   },
-  'C++': {
-    icon: '/lang-icons/C++.svg',
-    lib: 'stl, stb-image, termio, ncurses',
+  "C++": {
+    icon: "/lang-icons/C++.svg",
+    lib: "stl, stb-image, termio, ncurses",
   },
-  Batchfile: { icon: '/lang-icons/Batchfile.svg', lib: '...' },
+  Batchfile: { icon: "/lang-icons/Batchfile.svg", lib: "..." },
   JavaScript: {
-    icon: '/lang-icons/JavaScript.svg',
-    lib: 'Reactjs, Nextjs, Mailjs, Toastify, MaterialUI, RadixUI, ReactIcons',
+    icon: "/lang-icons/JavaScript.svg",
+    lib: "Reactjs, Nextjs, Mailjs, Toastify, MaterialUI, RadixUI, ReactIcons",
   },
-  CSS: { icon: '/lang-icons/CSS.svg', lib: 'TailwindCSS' },
-  HTML: { icon: '/lang-icons/HTML.svg', lib: 'BootStrap' },
-  Shell: { icon: '/lang-icons/Shell.svg', lib: '...' },
-  'Vim Script': { icon: '/lang-icons/Vim Script.svg', lib: '...' },
-  C: { icon: '/lang-icons/C.svg', lib: 'stb-image' },
-  filler: { icon: '/lang-icons/C.svg', lib: '...' },
-}
+  CSS: { icon: "/lang-icons/CSS.svg", lib: "TailwindCSS" },
+  HTML: { icon: "/lang-icons/HTML.svg", lib: "BootStrap" },
+  Shell: { icon: "/lang-icons/Shell.svg", lib: "..." },
+  "Vim Script": { icon: "/lang-icons/Vim Script.svg", lib: "..." },
+  C: { icon: "/lang-icons/C.svg", lib: "stb-image" },
+  Lua: { icon: "/lang-icons/Lua.svg", lig: "..." },
+  filler: { icon: "/lang-icons/filler.svg", lib: "..." },
+};
 
 const TechStack = () => {
-  const [loading, setLoading] = useState(true)
-  const [languages, setLanguages] = useState([])
-  const [projects, setProj] = useState('...')
-  const [active, setActive] = useState('Python')
-  const [libraries, setLib] = useState(lang_desc[active]['lib'])
+  const [loading, setLoading] = useState(true);
+  const [languages, setLanguages] = useState([]);
+  const [projects] = useState("...");
+  const [active, setActive] = useState("Python");
+  const [libraries, setLib] = useState(lang_desc[active]["lib"]);
 
   const getLang = async () => {
-    setLoading(true)
+    setLoading(true);
     try {
-      const fetchedLanguages = await fetchData()
-      setLanguages(Array.from(fetchedLanguages))
-      setLoading(false)
+      const fetchedLanguages = await fetchData();
+      setLanguages(Array.from(fetchedLanguages));
+      setLoading(false);
     } catch (error) {
-      console.error('Error fetching languages:', error)
-      setLoading(false)
+      console.error("Error fetching languages:", error);
+      setLoading(false);
     }
-    setLoading(false)
-  }
+    setLoading(false);
+  };
 
   useEffect(() => {
-    getLang()
-  }, [])
-
+    getLang();
+  }, []);
+  console.log(languages);
   const assignValues = (lang) => {
-    if (lang in lang_desc) setActive(lang)
-    else setActive('filler')
-    setLib(lang_desc[lang]['lib'])
+    if (lang in lang_desc) setActive(lang);
+    else setActive("filler");
+    setLib(lang_desc[lang]["lib"]);
     // setProj(lang_desc[lang])
-  }
+  };
 
+  const iconExists = (lang) => {
+    for (let language in lang_desc) if (language === lang) return true;
+    return false;
+  };
   return (
     <div className="flex techst-section items-center justify-center">
       {!loading ? (
@@ -64,19 +69,19 @@ const TechStack = () => {
               <div
                 key={id}
                 onClick={() => {
-                  assignValues(lang)
+                  assignValues(lang);
                 }}
                 className={`flex text-white xs:p-1 md:p-3 md:my-2 xs:w-[170px] sm:w-[200px] bg-primary ${
                   active === lang
-                    ? 'bg-opacity-60 cursor-default'
-                    : 'bg-opacity-20 cursor-pointer'
+                    ? "bg-opacity-60 cursor-default"
+                    : "bg-opacity-20 cursor-pointer"
                 } hover:bg-opacity-60 items-center rounded-md duration-300`}
               >
                 <img
                   src={
-                    lang_desc[lang]['icon']
-                      ? lang_desc[lang]['icon']
-                      : lang_desc['filler']['icon']
+                    iconExists(lang)
+                      ? lang_desc[lang]["icon"]
+                      : lang_desc["filler"]["icon"]
                   }
                   className="xs:h-8 md:h-10"
                 />
@@ -115,7 +120,7 @@ const TechStack = () => {
         </div>
       )}
     </div>
-  )
-}
+  );
+};
 
-export default TechStack
+export default TechStack;

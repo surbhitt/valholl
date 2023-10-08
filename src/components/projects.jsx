@@ -1,41 +1,41 @@
-import React, { useState } from 'react'
-import './styles.css'
-import ProjectContent from './projectContent'
+import { useState } from "react";
+import "./styles.css";
+import ProjectContent from "./projectContent";
 
-export default function projects() {
-  const base_url = 'https://github.com/surbhitt'
+export default function Projects() {
+  const base_url = "https://github.com/surbhitt";
   const projs = [
     {
-      name: 'mini-projects',
-      langs: ['C++', 'C', 'JavaScript', 'Python'],
+      name: "mini-projects",
+      langs: ["C++", "C", "JavaScript", "Python"],
     },
     {
-      name: 'qaahl',
-      langs: ['Python'],
+      name: "qaahl",
+      langs: ["Python"],
     },
     {
-      name: 'egg',
-      langs: ['C++'],
+      name: "egg",
+      langs: ["C++"],
     },
     {
-      name: 'brainpoke',
-      langs: ['Python'],
+      name: "brainpoke",
+      langs: ["Python"],
     },
     {
-      name: 'tartarus',
-      langs: ['Python'],
+      name: "tartarus",
+      langs: ["Python"],
     },
-  ]
+  ];
 
-  const [active, setActive] = useState(projs[0].name)
-  const [link, setLink] = useState(`${base_url}/${active}`)
-  const [langs, setLang] = useState(projs[0].langs)
+  const [active, setActive] = useState(projs[0].name);
+  const [link, setLink] = useState(`${base_url}/${active}`);
+  const [langs, setLang] = useState(projs[0].langs);
 
   const setData = (proj) => {
-    setActive(proj.name)
-    setLink(`${base_url}/mini-projects`)
-    setLang(proj.langs)
-  }
+    setActive(proj.name);
+    setLink(`${base_url}/mini-projects`);
+    setLang(proj.langs);
+  };
 
   return (
     <div className="projects-section">
@@ -47,17 +47,17 @@ export default function projects() {
                 <div
                   key={id}
                   onClick={() => {
-                    setData(proj)
+                    setData(proj);
                   }}
                   className={` ${
                     active == proj.name
-                      ? 'bg-opacity-60 cursor-default'
-                      : 'bg-opacity-20 cursor-pointer'
+                      ? "bg-opacity-60 cursor-default"
+                      : "bg-opacity-20 cursor-pointer"
                   } flex p-2 text-gray-300 xs:text-xs md:text-xl hover:bg-opacity-60 duration-300 bg-primary rounded-md`}
                 >
                   {proj.name}
                 </div>
-              )
+              );
             })}
           </div>
           <div className="flex flex-col justify-center gap-5 p-2 mt-4 xs:h-[520px] md:h-[700px] w-full rounded-md bg-primary bg-opacity-20">
@@ -73,7 +73,7 @@ export default function projects() {
                       src={`\\lang-icons\\${lang}.svg`}
                       className="h-6"
                     />
-                  )
+                  );
                 })}
               </div>
             </div>
@@ -82,24 +82,5 @@ export default function projects() {
         </div>
       </div>
     </div>
-  )
-}
-
-{
-  /* <table className="xs:mt-0 md:mt-5 w-full">
-              <tbody>
-                <tr>
-                  <td className="font-bold pb-5 text-gray-400 border-b-2 border-solid border-primary">
-                    Description:
-                  </td>
-                  <td className="pl-5 pb-5 border-b-2 border-solid border-primary">
-                    {desc}
-                  </td>
-                </tr>
-                <tr>
-                  <td className="font-bold py-5 text-gray-400">Scope:</td>
-                  <td className="pl-5">{scope}</td>
-                </tr>
-              </tbody>
-            </table> */
+  );
 }
