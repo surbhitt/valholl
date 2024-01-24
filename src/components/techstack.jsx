@@ -110,14 +110,14 @@ const TechStack = () => {
           </div> */}
                 </div>
             ) : (
-                <div className="flex xs:flex-col md:flex-row xs:w-[360px] md:w-5/6 max-w-[1000px] border border-solid border-red-800 p-2 rounded-md animate-pulse">
-                    <div className="xs:grid xs:grid-cols-2 xs:gap-2 sm:flex sm:flex-col h-full w-fit items-center">
+                <div className="xs:w-[360px] md:w-5/6 max-w-[1000px] border border-solid border-red-800 p-2 rounded-md animate-pulse">
+                    <div className="grid grid-cols-3 border broder-solid border-white xs:gap-2 h-full w-fit items-center">
                         {Array(10)
                             .fill(0)
                             .map((lang, id) => (
                                 <div
                                     key={id}
-                                    className="flex text-white xs:p-1 md:p-3 md:my-2 xs:w-[170px] sm:w-[200px] bg-primary bg-opacity-20 items-center rounded-md"
+                                    className="flex text-white xs:p-1 md:p-10 md:my-2 bg-primary bg-opacity-20 items-center rounded-md"
                                 >
                                     <div className="text-lg mx-5 text-gray-300">
                                         ...
